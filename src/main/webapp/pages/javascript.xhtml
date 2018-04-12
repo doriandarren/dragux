@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    
+	<ui:composition template="/WEB-INF/template/layout_external.xhtml">
+	    	    
+	    <ui:define name="title">Dragux</ui:define>
+	    
+	    <ui:define name="content">
+		    
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>JavaScript</h3>
+				<p>Notas de en lenguaje <em>JavaScript</em></p>				
+			</div>		
+		</div>	
+	</div>
+	
+	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Numero aleatorio</h3>
+				<code>				
+				var aleat = ramdomNumber(10);<br/>
+				alert(aleat);<br/>
+				
+				function ramdomNumber(n){<br/>
+					return Math.floor(Math.random() * n);<br/>
+				} <br/>
+				</code>
+				
+			</div>		
+		</div>	
+	</div>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Sumar</h3>
+				<code>		
+				var n1 = '5';<br/>
+				var n2 = '10';<br/>	
+				var res = sumNumber(n1,n2);<br/>
+								
+				alert(res);<br/>
+				
+				function sumNumber(n1, n2){<br/>
+					return Number(n1) + Number(n2);<br/>
+				} <br/>
+				</code>
+				
+			</div>		
+		</div>	
+	</div>
+	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Verificar Numero</h3><br/>
+				<code>		
+				alert("Numero: " + validateNumber());	<br/>			
+				function validateNumber(){<br/>
+					do{<br/>
+						var num = prompt("Numero: ");<br/>
+						num = Number(num);<br/>
+					}while(isNaN(num));<br/>
+					return num;	<br/>
+				}
+				</code>
+				
+			</div>		
+		</div>	
+	</div>	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Restar Fechas</h3>
+				<code>		
+				var fechaActual = new Date();<br/>
+				var fechaFutura = new Date(2018,2,01);<br/>
+				alert("Faltan: " + computerDay(fechaActual, fechaFutura) + " dias");<br/>
+				
+				function computerDay(fechaActual, fechaFutura){<br/>
+					var diferencia = fechaFutura.getTime() - fechaActual.getTime();<br/>
+					return Math.round(diferencia / (1000 * 60 * 60 *24));<br/>			
+				}
+				</code>
+				
+			</div>		
+		</div>	
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Horas</h3>
+				<code>		
+				var ahora = new Date();<br/>
+				var saludo = "Buenas " + ((ahora.getHours()>17 ? " tardes." : " dia."));<br/>				
+				alert(saludo);	<br/>			
+				</code>				
+			</div>		
+		</div>	
+	</div>
+	
+	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Crear Objetos</h3>
+				<code>		
+				var cancion = {<br/>
+					artista: "Daniel Perez",<br/>
+					anio: 2014,<br/>
+					tema: "Todos somos todos",<br/>
+					getInfo: function(){<br/>
+						return "Cancion: " + ": " + this.tema +", "+  this.artista +", "+ this.anio + ".";<br/>
+					}<br/>
+				}
+				alert(cancion.getInfo());				
+				</code>				
+			</div>		
+		</div>	
+	</div>
+	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Crear Arrays</h3>
+				<code>		
+				var countries = ['Italia',<br/>
+					'Francia',<br/>
+					'Dinamarca',<br/>
+					'Reino Unido',<br/>
+					'China',<br/>
+					'Alemania',<br/>
+					'Rusia',<br/>
+					'Grecia',<br/>
+				]<br/>
+				alert(countries[3]);				
+				</code>				
+			</div>		
+		</div>	
+	</div>
+	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Expresion Regular</h3>
+				<code>		
+				var str = "example@example.org";<br/>				
+				var comp = str.match(/@/);<br/>
+				if(comp == "@"){<br/>
+					alert("Si tiene el signo @");<br/>
+				}else{<br/>
+					alert("No tiene el signo @");<br/>
+				}								
+				</code>				
+			</div>		
+		</div>	
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Operadores de Objetos</h3>
+				<ul>
+					<li>new</li>
+					<li>in</li>
+					<li>delete</li>
+				</ul>
+				<code>		
+				
+				function Prenda(tipo, tejido, color){<br/>
+					this.tipo = tipo;<br/>
+					this.tejido = tejido;<br/>
+					this.color = color;<br/>
+				}
+				
+				//Ej new<br/>
+				var prenda1 = new Prenda("Falda", "Lana","Azul");<br/>
+				var prenda2 = new Prenda("Jersey", "Angora","Rosa");<br/>
+				var prenda3 = new Prenda("Pantalon", "Tejano","Gris");	<br/>
+								
+				//Ej in<br/>
+				alert("tipo" in Prenda == true);<br/>
+				alert("tejido" in Prenda == true);	<br/>	
+				
+				//Ej delete		<br/>		
+				var lugares = ['Italia',<br/>
+					'Francia',<br/>
+					'Dinamarca',<br/>
+					'Reino Unido',<br/>
+					'China',<br/>
+					'Alemania',<br/>
+					'Rusia',<br/>
+					'Grecia',<br/>
+				];<br/>
+				delete lugares[3];<br/>
+				//Imprime undefined debido que se borro	<br/>			
+				alert(lugares[3]);<br/>
+								
+				</code>				
+			</div>		
+		</div>	
+	</div>
+	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>null y undefined</h3>
+				<ul>
+					<li>undefined: indica que la variable no existe (la no existencia).</li>
+					<li>null: indica que la variable está vacia (valor vacio).</li>
+				</ul>
+				<code>		
+				var caso1 = { };  //es undefined<br/>
+				var caso2 = null; //es null porque no existe<br/>
+				
+				//Ej null<br/>
+				Number(null); //El resultado es 0<br/>
+				var res = 5 + null;<br/>
+				alert(res);<br/>
+				
+				//Ej undefined<br/>
+				Number(undefined); //El resultado seria NaN (Not a Number)<br/>
+				var res = 5 + undefined;<br/>
+				alert(res);											
+				</code>				
+			</div>		
+		</div>	
+	</div>   
+	    </ui:define>
+	 
+	</ui:composition>   
+</html> 
